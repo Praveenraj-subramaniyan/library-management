@@ -56,14 +56,14 @@ function AdminDashboard() {
     },
     {
       id: "7",
-      title: "Book 6",
+      title: "Book 7",
       author: "Author2",
       totalBooks: 2,
       available: 1,
     },
     {
       id: "8",
-      title: "Book 6",
+      title: "Book 8",
       author: "Author2",
       totalBooks: 2,
       available: 1,
@@ -78,7 +78,7 @@ function AdminDashboard() {
     {
       id: "10",
       title: "Book 10",
-      author: "Author22",
+      author: "Author2",
       totalBooks: 2,
       available: 1,
     },
