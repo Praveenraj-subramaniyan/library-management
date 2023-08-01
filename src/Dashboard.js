@@ -54,6 +54,34 @@ function AdminDashboard() {
       totalBooks: 2,
       available: 1,
     },
+    {
+      id: "7",
+      title: "Book 6",
+      author: "Author2",
+      totalBooks: 2,
+      available: 1,
+    },
+    {
+      id: "8",
+      title: "Book 6",
+      author: "Author2",
+      totalBooks: 2,
+      available: 1,
+    },
+    {
+      id: "9",
+      title: "Book 9",
+      author: "Author6",
+      totalBooks: 2,
+      available: 1,
+    },
+    {
+      id: "10",
+      title: "Book 10",
+      author: "Author22",
+      totalBooks: 2,
+      available: 1,
+    },
   ]);
   const handleAddBook = (newBookValues) => {
     const newBook = {
@@ -106,13 +134,13 @@ function AdminDashboard() {
  
 
   return (
-    <div>
+    <div className="dashBoard">
       <h2 className="text-center text-white py-2 bg-primary">
         Library Management
       </h2>
-      <div className="d-flex justify-content-end me-5 pe-2">
+      <div className="d-flex justify-content-end me-5 pe-2 AddBookdiv ">
         <button
-          className="btn btn-primary my-2  me-5"
+          className="btn btn-primary my-2  me-5 AddBook"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#addBook"
@@ -121,22 +149,22 @@ function AdminDashboard() {
         </button>
       </div>
       <div className="row ms-1 ">
-        <h4 className="col-1 ps-5">Id</h4>
-        <h4 className="col-1 ps-0">Title</h4>
-        <h4 className="col-1 ps-0">Author</h4>
-        <h4 className="col-1">Available</h4>
-        <h4 className="col-2 ps-4">Total Books</h4>
+        <h4 className="col-1 col-sm-1 ps-5  col-md-2 idh">Id</h4>
+        <h4 className="col-2 col-sm-1 ps-0  Titleh">Title</h4>
+        <h4 className="col-2 col-sm-1 ps-0 Authorh">Author</h4>
+        <h4 className="col-2 col-sm-1 Availableh">Available</h4>
+        <h4 className="col-5 col-sm-2  col-md-2 ps-4">Total Books</h4>
       </div>
       {books.map((book) => (
-        <div className="row" key={book.id}>
+        <div className="row " key={book.id}>
           <div className="row ms-1">
-            <p className="col-1 ps-5">{book.id}</p>
-            <p className="col-1 ps-1">{book.title}</p>
-            <p className="col-1 ps-1">{book.author}</p>
-            <p className="col-1 ps-5">{book.available}</p>
-            <p className="col-1 ps-5 ms-4 pe-0 me-0">{book.totalBooks}</p>
+            <p className="col-1 col-sm-1 ps-5  col-md-2 idp">{book.id}</p>
+            <p className="col-1 col-sm-1  ps-1 Titlep">{book.title}</p>
+            <p className="col-1 col-sm-1  ps-1 Authorp">{book.author}</p>
+            <p className="col-1 col-sm-1 ps-5 Availablep">{book.available}</p>
+            <p className="col-5 col-sm-1 ps-5 ms-4 pe-0 me-0 totalBooksp">{book.totalBooks}</p>
             <button
-              className="col-1 btn btn-link text-decoration-none pt-0"
+              className="col-1 col-sm-1  btn btn-link text-decoration-none pt-0 edit"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#editbook"
@@ -144,13 +172,13 @@ function AdminDashboard() {
             >
               Edit
             </button>
-            <button className="col-1 btn btn-link text-decoration-none  pt-0" onClick={()=> DeleteBook(book.id)}>
+            <button className="col-2 col-sm-1  btn btn-link text-decoration-none  pt-0 delete" onClick={()=> DeleteBook(book.id)}>
               Delete
             </button>
-            <button className="col-1 btn btn-link text-decoration-none  pt-0" onClick={()=> BorrowBook(book.id)}>
+            <button className="col-2 col-sm-1  btn btn-link text-decoration-none  pt-0 borrow" onClick={()=> BorrowBook(book.id)}>
               Borrow
             </button>
-            <button className="col-1 btn btn-link text-decoration-none  pt-0" onClick={()=> ReturnBook(book.id)}>
+            <button className="col-2 col-sm-1  btn btn-link text-decoration-none  pt-0 return" onClick={()=> ReturnBook(book.id)}>
               Return
             </button>
           </div>
